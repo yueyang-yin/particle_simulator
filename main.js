@@ -758,7 +758,7 @@ async function initMediaPipe() {
     if (preview) preview.classList.remove("hidden");
     if (runtimeUi) runtimeUi.classList.remove("hidden");
     if (modeLine) modeLine.textContent = `> Mode: ${mode === "attract" ? "Attract" : "Repel"}`;
-    if (shortcutLine) shortcutLine.textContent = "> Shortcuts: Space Toggle Mode · V Toggle Preview";
+    setShortcutLine(false);
 
     video.addEventListener(
       "loadedmetadata",
