@@ -1,12 +1,17 @@
 # Particle Fluid Portrait
 
-A real-time particle simulator driven by MediaPipe FaceMesh and Hands. Thousands of particles form your face and hands with fluid motion, gestures, and a terminal-style UI.
+A real-time particle simulator powered by MediaPipe FaceMesh and Hands. Thousands of particles choreograph your face and hands with fluid motion, gesture-driven interactions, and a terminal-inspired UI.
+
+<img width="984" height="600" alt="截屏2026-01-09 18 31 36" src="https://github.com/user-attachments/assets/6a744573-665e-4e8e-8928-cc93e99e3290" />
+
+<img width="983" height="599" alt="截屏2026-01-09 18 32 30" src="https://github.com/user-attachments/assets/764d767b-45d9-414c-bde6-ffc7bcc7cc5c" />
+
 
 ## Features
 
 - Facial mesh (468 key points) + Hands (21 key points, up to two hands)
 - 8k–15k particles with attraction/repulsion modes and trailing glow effects
-- Gesture interaction: (I think you should discover this yourself)
+- Gesture interaction: subtle surprises included
 - Fist gesture to switch themes
 - Terminal-style UI and guide text
 
