@@ -1,2 +1,3 @@
 # Cursor workspace rules and metadata
 .cursor/
+.DS_Store
