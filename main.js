@@ -12,6 +12,7 @@ const shortcutLine = document.getElementById("shortcutLine");
 const terminalEl = document.getElementById("terminal");
 const gestureTerminal = document.getElementById("gestureTerminal");
 
+// Golden ratio used to space particles and oscillations later in the loop.
 const phi = (1 + Math.sqrt(5)) / 2;
 const particles = [];
 const maxParticles = 15000;
@@ -48,6 +49,7 @@ let apologyShown = false;
 let gestureTyping = false;
 let gestureTimer = null;
 
+// Theme palettes that drive particle colors and trail blending.
 const themes = [
   {
     name: "Rainbow",
@@ -77,6 +79,7 @@ const themes = [
 ];
 
 function resizeCanvas() {
+  // Keep the canvas crisp on high-DPI screens.
   const dpr = window.devicePixelRatio || 1;
   canvas.width = window.innerWidth * dpr;
   canvas.height = window.innerHeight * dpr;
@@ -87,6 +90,7 @@ function resizeCanvas() {
 }
 
 function updateCanvasTransform() {
+  // Compute a scale/offset to letterbox the camera feed into the canvas.
   const cw = window.innerWidth;
   const ch = window.innerHeight;
   const vw = video.videoWidth || 640;
@@ -109,12 +113,14 @@ function updateCanvasTransform() {
 }
 
 function mapToCanvas(point) {
+  // Convert normalized landmarks into mirrored canvas coordinates.
   const x = point.x * (video.videoWidth || 640) * canvasSize.scale + canvasSize.offsetX;
   const y = point.y * (video.videoHeight || 360) * canvasSize.scale + canvasSize.offsetY;
   return { x: canvasSize.width - x, y };
 }
 
 function createParticles() {
+  // Seed particles near the center for the initial reveal.
   particles.length = 0;
   for (let i = 0; i < maxParticles; i += 1) {
     const cx = window.innerWidth * 0.5;
@@ -132,6 +138,7 @@ function createParticles() {
 }
 
 function buildTextTargets() {
+  // Rasterize the intro text into point targets.
   const width = window.innerWidth;
   const height = window.innerHeight;
   const off = document.createElement("canvas");
@@ -174,17 +181,20 @@ function buildTextTargets() {
 }
 
 function pickThemeColor() {
+  // Sample a random color from the active theme palette.
   const palette = themes[currentThemeIndex].palette;
   return palette[Math.floor(Math.random() * palette.length)];
 }
 
 function rethemeParticles() {
+  // Refresh particle colors after switching themes.
   particles.forEach((p) => {
     p.color = pickThemeColor();
   });
 }
 
 function toggleMode() {
+  // Switch between attract and repel forces.
   mode = mode === "attract" ? "repel" : "attract";
   if (modeLine) {
     modeLine.textContent = `> Mode: ${mode === "attract" ? "Attract" : "Repel"}`;
@@ -192,6 +202,7 @@ function toggleMode() {
 }
 
 function togglePreview() {
+  // Show or hide the camera preview element.
   if (!preview) return;
   previewVisible = !previewVisible;
   preview.classList.toggle("hidden", !previewVisible);
@@ -747,7 +758,7 @@ async function initMediaPipe() {
     if (preview) preview.classList.remove("hidden");
     if (runtimeUi) runtimeUi.classList.remove("hidden");
     if (modeLine) modeLine.textContent = `> Mode: ${mode === "attract" ? "Attract" : "Repel"}`;
-    if (shortcutLine) shortcutLine.textContent = "> Shortcuts: Space Toggle Mode · V Toggle Preview";
+    setShortcutLine(false);
 
     video.addEventListener(
       "loadedmetadata",

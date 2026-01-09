@@ -32,7 +32,7 @@ http://localhost:8000
 ## Controls
 
 - `Enter` — enable camera
-- `Space` — toggle mode (disabled during middle-finger penalty until you apologize)
+- `Space` — toggle mode (hinted after the middle-finger sequence and disabled during the penalty until you apologize)
 - `V` — toggle camera preview
 
 ## Notes
