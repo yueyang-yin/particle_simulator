@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Particle Flow</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  </head>
+  <body>
+    <div id="intro" class="intro">
+      <div class="intro-frame">
+        <div class="intro-center">
+          <div class="intro-title"></div>
+        </div>
+        <div id="terminal" class="terminal"></div>
+        <button id="enableCamera" class="primary-btn hidden">Press Enter</button>
+      </div>
+    </div>
+
+    <canvas id="particleCanvas"></canvas>
+    <div id="preview" class="preview hidden">
+      <video id="camera" autoplay playsinline muted></video>
+      <canvas id="overlay"></canvas>
+    </div>
+    <div id="gestureTerminal" class="terminal gesture-terminal hidden"></div>
+
+    <div class="ui hidden" id="runtimeUi">
+      <div class="terminal-ui mode-line" id="modeLine">> Mode: Attract</div>
+      <div class="terminal-ui shortcuts-line" id="shortcutLine">> Shortcuts: Space Toggle Mode · V Toggle Preview</div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/face_mesh.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
