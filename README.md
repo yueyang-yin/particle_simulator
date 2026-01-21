@@ -4,7 +4,8 @@ A real-time particle simulator powered by MediaPipe FaceMesh and Hands. Thousand
 
 <img width="984" height="600" alt="截屏2026-01-09 18 31 36" src="https://github.com/user-attachments/assets/6a744573-665e-4e8e-8928-cc93e99e3290" />
 
-<img width="983" height="599" alt="截屏2026-01-09 18 32 30" src="https://github.com/user-attachments/assets/764d767b-45d9-414c-bde6-ffc7bcc7cc5c" />
+![534045941-764d767b-45d9-414c-bde6-ffc7bcc7cc5c](https://github.com/user-attachments/assets/08c80605-b044-4685-8b70-1134ecb8eb5d)
+
 
 
 ## Features
