@@ -21,13 +21,7 @@ A real-time particle simulator powered by MediaPipe FaceMesh and Hands. Thousand
 Run locally with a static server so the camera works.
 
 ```bash
-python3 -m http.server 8000
-```
-
-Open:
-
-```
-http://localhost:8000
+npx serve .
 ```
 
 ## Controls
